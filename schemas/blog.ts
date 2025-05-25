@@ -5,19 +5,12 @@ export default defineType({
   title: 'Blog Post',
   type: 'document',
   fields: [
-    {
-      name: 'title',
-      title: 'Post Title',
-      type: 'string',
-    },
+    {name: 'title', title: 'Title', type: 'string'},
     {
       name: 'slug',
-      title: 'Slug (URL)',
+      title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      options: {source: 'title', maxLength: 96},
     },
     {
       name: 'publishedAt',
@@ -36,10 +29,34 @@ export default defineType({
       type: 'text',
     },
     {
-      name: 'body',
-      title: 'Content',
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+    },
+    {
+      name: 'tags',
+      title: 'Tags',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [{type: 'string'}],
+    },
+    {
+      name: 'sections',
+      title: 'Sections',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'title', title: 'Section Title', type: 'string'},
+            {
+              name: 'content',
+              title: 'Section Content',
+              type: 'array',
+              of: [{type: 'block'}],
+            },
+          ],
+        },
+      ],
     },
   ],
 })
