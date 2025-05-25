@@ -118,5 +118,16 @@ export default defineType({
         },
       ],
     },
+    {
+      name: 'testimonials',
+      title: 'Testimonials Section',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'testimonial'}],
+        },
+      ],
+    },
   ],
 })
