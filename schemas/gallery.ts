@@ -18,31 +18,35 @@ export default defineType({
       description: 'Optional short description for the gallery page',
     },
     {
-      name: 'images',
-      title: 'Gallery Images',
+      name: 'albums',
+      title: 'Albums',
       type: 'array',
       of: [
         {
           type: 'object',
           fields: [
             {
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              options: {
-                hotspot: true,
-              },
+              name: 'albumTitle',
+              title: 'Album Title',
+              type: 'string',
               validation: (Rule) => Rule.required(),
             },
             {
-              name: 'title',
-              title: 'Image Title (Optional)',
-              type: 'string',
+              name: 'albumDescription',
+              title: 'Album Description (Optional)',
+              type: 'text',
             },
             {
-              name: 'description',
-              title: 'Image Description (Optional)',
-              type: 'text',
+              name: 'photos',
+              title: 'Photos',
+              type: 'array',
+              of: [
+                {
+                  type: 'image',
+                  options: {hotspot: true},
+                },
+              ],
+              validation: (Rule) => Rule.required().min(1),
             },
           ],
         },
