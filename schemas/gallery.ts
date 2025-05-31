@@ -1,3 +1,5 @@
+// sanity/schema/gallery.ts
+
 import {defineType} from 'sanity'
 
 export default defineType({
@@ -29,6 +31,16 @@ export default defineType({
               name: 'albumTitle',
               title: 'Album Title',
               type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'slug',
+              title: 'Slug',
+              type: 'slug',
+              options: {
+                source: 'albumTitle',
+                maxLength: 96,
+              },
               validation: (Rule) => Rule.required(),
             },
             {
