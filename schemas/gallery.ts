@@ -57,6 +57,13 @@ export default defineType({
                   type: 'image',
                   options: {hotspot: true},
                 },
+                {
+                  type: 'file',
+                  title: 'Video',
+                  options: {
+                    accept: 'video/*',
+                  },
+                },
               ],
               validation: (Rule) => Rule.required().min(1),
             },
