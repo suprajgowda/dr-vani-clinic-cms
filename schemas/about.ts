@@ -78,8 +78,85 @@ export default defineType({
         {
           type: 'object',
           fields: [
-            {name: 'awardImage', title: 'Award Image', type: 'image', options: {hotspot: true}},
+            {
+              name: 'awardImage',
+              title: 'Award Image',
+              type: 'image',
+              options: {hotspot: true},
+            },
             {name: 'awardTitle', title: 'Award Title', type: 'string'},
+          ],
+        },
+      ],
+    },
+
+    // New Sections With Optional Images
+    {
+      name: 'educationAndTraining',
+      title: 'Education & Training',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'title', title: 'Title', type: 'string'},
+            {name: 'image', title: 'Image (Optional)', type: 'image', options: {hotspot: true}},
+          ],
+        },
+      ],
+    },
+    {
+      name: 'expertise',
+      title: 'Areas of Expertise',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'title', title: 'Title', type: 'string'},
+            {name: 'image', title: 'Image (Optional)', type: 'image', options: {hotspot: true}},
+          ],
+        },
+      ],
+    },
+    {
+      name: 'experience',
+      title: 'Professional Experience',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'title', title: 'Title', type: 'string'},
+            {name: 'image', title: 'Image (Optional)', type: 'image', options: {hotspot: true}},
+          ],
+        },
+      ],
+    },
+    {
+      name: 'memberships',
+      title: 'Memberships & Affiliations',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'title', title: 'Title', type: 'string'},
+            {name: 'image', title: 'Image (Optional)', type: 'image', options: {hotspot: true}},
+          ],
+        },
+      ],
+    },
+    {
+      name: 'personalInterests',
+      title: 'Hobbies & Interests',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'title', title: 'Title', type: 'string'},
+            {name: 'image', title: 'Image (Optional)', type: 'image', options: {hotspot: true}},
           ],
         },
       ],
