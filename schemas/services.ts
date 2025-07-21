@@ -32,9 +32,28 @@ export default defineType({
         {
           type: 'object',
           fields: [
-            {name: 'icon', title: 'Icon (Optional)', type: 'image', options: {hotspot: true}},
-            {name: 'title', title: 'Service Title', type: 'string'},
-            {name: 'description', title: 'Short Description', type: 'string'},
+            {
+              name: 'image',
+              title: 'Service Image',
+              type: 'image',
+              options: {hotspot: true},
+            },
+            {
+              name: 'title',
+              title: 'Service Title',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Short Description',
+              type: 'text',
+            },
+            {
+              name: 'subServices',
+              title: 'Sub Services',
+              type: 'array',
+              of: [{type: 'string'}],
+            },
           ],
         },
       ],
