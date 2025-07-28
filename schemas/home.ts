@@ -55,6 +55,11 @@ export default defineType({
               title: 'Service Text',
               type: 'string',
             },
+            {
+              name: 'serviceDescription',
+              title: 'Service Description',
+              type: 'text',
+            },
           ],
         },
       ],

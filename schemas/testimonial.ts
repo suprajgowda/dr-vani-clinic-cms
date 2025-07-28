@@ -7,25 +7,28 @@ export default defineType({
   fields: [
     {
       name: 'name',
-      title: 'Name',
+      title: 'Name (optional)',
       type: 'string',
-    },
-    {
-      name: 'photo',
-      title: 'User Photo',
-      type: 'image',
-      options: {hotspot: true},
+      description: 'Name of the person giving the testimonial (can be Anonymous)',
     },
     {
       name: 'content',
       title: 'Testimonial Content',
       type: 'text',
+      rows: 10,
+      validation: (Rule) => Rule.required().min(20),
     },
     {
-      name: 'rating',
-      title: 'Star Rating (1-5)',
-      type: 'number',
-      validation: (Rule) => Rule.min(1).max(5),
+      name: 'date',
+      title: 'Date Submitted',
+      type: 'datetime',
+      initialValue: () => new Date().toISOString(),
+    },
+    {
+      name: 'approved',
+      title: 'Approved for Display',
+      type: 'boolean',
+      initialValue: false,
     },
   ],
 })
