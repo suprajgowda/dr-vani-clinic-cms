@@ -60,6 +60,12 @@ export default defineType({
               title: 'Service Description',
               type: 'text',
             },
+            {
+              name: 'blogLink',
+              title: 'Link to Blog',
+              type: 'reference',
+              to: [{type: 'blog'}],
+            },
           ],
         },
       ],
