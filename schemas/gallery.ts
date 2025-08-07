@@ -48,24 +48,53 @@ export default defineType({
               title: 'Album Description (Optional)',
               type: 'text',
             },
+            // {
+            //   name: 'photos',
+            //   title: 'Photos',
+            //   type: 'array',
+            //   of: [
+            //     {
+            //       type: 'image',
+            //       options: {hotspot: true},
+            //     },
+            //     {
+            //       type: 'file',
+            //       title: 'Video',
+            //       options: {
+            //         accept: 'video/*',
+            //       },
+            //     },
+            //   ],
+            //   validation: (Rule) => Rule.required().min(1),
+            // },
             {
               name: 'photos',
               title: 'Photos',
               type: 'array',
               of: [
                 {
-                  type: 'image',
-                  options: {hotspot: true},
-                },
-                {
-                  type: 'file',
-                  title: 'Video',
-                  options: {
-                    accept: 'video/*',
-                  },
+                  type: 'object',
+                  fields: [
+                    {
+                      name: 'image',
+                      title: 'Image',
+                      type: 'image',
+                      options: {hotspot: true},
+                    },
+                    {
+                      name: 'video',
+                      title: 'Video',
+                      type: 'file',
+                      options: {accept: 'video/*'},
+                    },
+                    {
+                      name: 'title',
+                      title: 'Title / Caption',
+                      type: 'string',
+                    },
+                  ],
                 },
               ],
-              validation: (Rule) => Rule.required().min(1),
             },
           ],
         },
