@@ -7,15 +7,34 @@ export default defineType({
   fields: [
     // SECTION 1 – Hero Section
     {
-      name: 'heroTitle',
-      title: 'Hero Title',
-      type: 'string',
+      name: 'scrollingBanner',
+      title: 'Website Scrolling Banner',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'bannerImage',
+              title: 'Banner Image',
+              type: 'image',
+              options: {hotspot: true},
+            },
+            {
+              name: 'bannerTitle',
+              title: 'Banner Title',
+              type: 'string',
+            },
+            {
+              name: 'bannerDescription',
+              title: 'Banner Description',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     },
-    {
-      name: 'heroSubtitle',
-      title: 'Hero Subtitle',
-      type: 'string',
-    },
+
     {
       name: 'heroImage',
       title: 'Hero Image',
@@ -23,16 +42,6 @@ export default defineType({
       options: {
         hotspot: true,
       },
-    },
-    {
-      name: 'ctaText',
-      title: 'Call to Action Text',
-      type: 'string',
-    },
-    {
-      name: 'ctaLink',
-      title: 'Call to Action Link',
-      type: 'url',
     },
 
     // SECTION 2 – Services
@@ -73,56 +82,44 @@ export default defineType({
 
     // SECTION 3 – About Dr. Vani
     {
-      name: 'sectionImage',
-      title: 'About Section Image',
-      type: 'image',
-      options: {hotspot: true},
-    },
-    {
-      name: 'sectionTitle',
-      title: 'About Section Title',
-      type: 'string',
-    },
-    {
-      name: 'sectionAchievements',
-      title: 'Key Achievements',
-      type: 'array',
-      of: [{type: 'string'}],
-    },
-    {
       name: 'sectionDescription',
       title: 'About Description / Quote',
       type: 'text',
     },
 
-    // SECTION 4 – Awards & Recognition
+    // SECTION 4 – Medical Services
     {
-      name: 'awardsSectionTitle',
-      title: 'Awards Section Title',
+      name: 'medicalServicesTitle',
+      title: 'Medical Services Title',
       type: 'string',
     },
     {
-      name: 'awardsSectionDescription',
-      title: 'Awards Section Description',
+      name: 'medicalServicesDescription',
+      title: 'Medical Services Description',
       type: 'text',
     },
     {
-      name: 'sectionAwards',
-      title: 'Awards List',
+      name: 'medicalServicesList',
+      title: 'Medical Services List',
       type: 'array',
       of: [
         {
           type: 'object',
           fields: [
             {
-              name: 'awardImage',
-              title: 'Award Image',
+              name: 'serviceImage',
+              title: 'Service Image',
               type: 'image',
               options: {hotspot: true},
             },
             {
-              name: 'awardTitle',
-              title: 'Award Title',
+              name: 'serviceTitle',
+              title: 'Service Title',
+              type: 'string',
+            },
+            {
+              name: 'serviceDescription',
+              title: 'Service Description',
               type: 'string',
             },
           ],
