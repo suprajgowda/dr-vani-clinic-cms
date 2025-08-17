@@ -41,6 +41,7 @@ export default defineType({
           fields: [
             {name: 'title', title: 'Title', type: 'string'},
             {name: 'description', title: 'Description', type: 'text'},
+            {name: 'image', title: 'Image (Optional)', type: 'image', options: {hotspot: true}},
           ],
         },
       ],
@@ -57,6 +58,12 @@ export default defineType({
       name: 'whyDrVaniDescription',
       title: 'Why Dr. Vani - Description',
       type: 'text',
+    },
+    {
+      name: 'whyDrVaniImage',
+      title: 'Why Dr. Vani - Image (Optional)',
+      type: 'image',
+      options: {hotspot: true},
     },
 
     // Section 5 - Awards & Recognition
