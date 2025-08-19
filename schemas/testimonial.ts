@@ -22,7 +22,6 @@ export default defineType({
       title: 'Testimonial Content',
       type: 'text',
       rows: 10,
-      validation: (Rule) => Rule.required().min(20),
     },
     {
       name: 'date',
